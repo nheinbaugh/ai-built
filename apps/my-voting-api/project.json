@@ -1,0 +1,26 @@
+{
+  "name": "my-voting-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/my-voting-api/src",
+  "projectType": "application",
+  "tags": ["scope:feature", "layer:domain", "type:app"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "my-voting-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "my-voting-api:build:development"
+        },
+        "production": {
+          "buildTarget": "my-voting-api:build:production"
+        }
+      }
+    }
+  }
+}

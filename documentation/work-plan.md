@@ -2,8 +2,19 @@
 
 ## Initial Setup
 ### NX Projects Setup
-- [x] Create voting-api NX application (apps/voting-api)
-    * Project created using NX CLI
+- [x] Create voting-api NX application (apps/my-voting-api)
+    * Project created using NX CLI using @nx/express
+    * Project structure follows coding standards
+    * Project has appropriate tags
+    * Project has basic Express setup with TypeScript
+    * Project includes health check endpoint
+- [ ] Add Dockerfile for API application
+    * Dockerfile follows best practices for Node.js applications
+    * Multi-stage build is implemented
+    * Development and production builds are supported
+    * Node modules are properly cached
+    * Build artifacts are optimized
+    * Project created using NX CLI using @nx/express
     * Project structure follows coding standards
     * Project has appropriate tags
     * Project has basic Express setup with TypeScript
@@ -20,7 +31,7 @@
     * Volume mounts set up
     * Network configuration added
     * Health checks implemented
-- [ ] Create voting-web NX application (apps/voting-web)
+- [ ] Create voting-web NX application (apps/my-voting-web)
     * Project created using NX CLI
     * Project structure follows coding standards
     * Project has appropriate tags

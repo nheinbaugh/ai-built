@@ -16,7 +16,6 @@
     "sharedGlobals": []
   },
   "targetDefaults": {},
-
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",
@@ -39,6 +38,15 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
+      },
+      "exclude": ["my-voting-api-e2e/**/*", "apps/my-voting-api-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
       }
     }
   ],

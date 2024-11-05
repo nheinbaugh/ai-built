@@ -31,6 +31,7 @@ We use the following guidance when creating new files/folders for our workspace.
 
 ##  Project Structure
 * We place unit tests in files named `*.spec.ts` that are located in the same folder as the code they are testing.
+* we never have folders (or files) that include the name "utils" it's far too generic to be useful
 * we prefer to have similar files (e.g. hooks, types, etc.) located in the same folder with the same generic names
     * hooks
     * types

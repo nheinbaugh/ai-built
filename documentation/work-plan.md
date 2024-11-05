@@ -2,7 +2,7 @@
 
 ## Initial Setup
 ### NX Projects Setup
-- [ ] Create voting-api NX application (apps/voting-api)
+- [x] Create voting-api NX application (apps/voting-api)
     * Project created using NX CLI
     * Project structure follows coding standards
     * Project has appropriate tags

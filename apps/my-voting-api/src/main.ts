@@ -6,7 +6,7 @@
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-import { healthRouter } from './routes/health';
+import healthRoutes from './routes/health';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,8 +16,8 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/health', healthRouter);
+// Health check route
+app.use('/api/health', healthRoutes);
 
 // Error handling middleware
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {

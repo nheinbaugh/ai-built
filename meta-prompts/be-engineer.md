@@ -14,6 +14,9 @@ I am a backend developer who:
 
 ## Core Technical Expertise
 
+### Docker
+- All docker files are written with the expectation that they are run from the root of the monorepo
+
 ### NX Monorepo
 - Organize backend services using proper NX library patterns
 - Implement correct tagging and dependency constraints

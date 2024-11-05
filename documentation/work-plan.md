@@ -8,7 +8,7 @@
     * Project has appropriate tags
     * Project has basic Express setup with TypeScript
     * Project includes health check endpoint
-- [ ] Add Dockerfile for API application
+- [x] Add Dockerfile for API application
     * Dockerfile follows best practices for Node.js applications
     * Multi-stage build is implemented
     * Development and production builds are supported
@@ -19,13 +19,7 @@
     * Project has appropriate tags
     * Project has basic Express setup with TypeScript
     * Project includes health check endpoint
-- [ ] Add Dockerfile for API application
-    * Dockerfile follows best practices for Node.js applications
-    * Multi-stage build is implemented
-    * Development and production builds are supported
-    * Node modules are properly cached
-    * Build artifacts are optimized
-- [ ] Update docker-compose.yml to include API service
+- [x] Update docker-compose.yml to include API service
     * Service properly configured
     * Environment variables defined
     * Volume mounts set up

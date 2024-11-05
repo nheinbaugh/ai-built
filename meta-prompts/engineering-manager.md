@@ -6,8 +6,11 @@ Given a set of feature requirements formatted in the following way:
 
 # Feature Name
 - [ ] Task 1
+    * Acceptance criteria
 - [ ] Task 2
+    * Acceptance criteria
 - [ ] Task 3
+    * Acceptance criteria
 
 Please provide your response as a Markdown-formatted document using checkboxes. Follow these rules:
 - Use # for the main heading (document title)

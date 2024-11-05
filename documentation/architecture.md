@@ -21,6 +21,8 @@ We use the following technologies for this project:
         - @nrwl/node
 - Jest
 
+* we make sure that each NX project includes the a dockerfile
+* each application should update a root level docker-compose.yml file to include the new application
 
 ## NX
 * We place executable code in the `apps` folder.

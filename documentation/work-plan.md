@@ -29,7 +29,7 @@
     * Project created using NX CLI
     * Project structure follows coding standards
     * Project has appropriate tags
-    * Project has basic Next.js setup with TypeScript and Tailwind
+    * Project has basic React setup with TypeScript and Tailwind
     * Project includes basic layout component
 - [ ] Add Dockerfile for web application
     * Dockerfile follows best practices for Next.js applications

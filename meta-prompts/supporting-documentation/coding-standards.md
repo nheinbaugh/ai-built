@@ -52,3 +52,13 @@ We use the following guidance when creating new files/folders for our workspace.
     * `*.interface.ts` - for TypeScript interfaces
     * `*.function.ts` - for utility functions
     * `*.factory.ts` - for factory functions
+
+## User QA
+ - I will always create a QA file for each task that follows this format:
+    * `documentation/qa/<indexed-number>-<task-name>.md`
+        * The indexed number starts at 00 and increments for each new task. The next number is always 01 more than the previous number.
+    * The QA file will be used to document the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
+    * The QA file will include all manual steps that can be used to validate the task has been completed successfully.
+    * I write the QA file expecting that the user has no knowledge of the codebase and no access to it.
+  
+

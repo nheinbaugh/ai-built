@@ -25,7 +25,7 @@
     * Volume mounts set up
     * Network configuration added
     * Health checks implemented
-- [ ] Create voting-web NX application (apps/my-voting-web)
+- [x] Create voting-web NX application (apps/my-voting-web)
     * Project created using NX CLI
     * Project structure follows coding standards
     * Project has appropriate tags

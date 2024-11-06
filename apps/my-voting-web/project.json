@@ -3,13 +3,16 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/my-voting-web/src",
   "projectType": "application",
+
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/my-voting-web"
+        "outputPath": "dist/apps/my-voting-web",
+        "postcssConfig": "apps/my-voting-web/postcss.config.js",
+        "tailwindConfig": "apps/my-voting-web/tailwind.config.js"
       },
       "configurations": {
         "development": {

@@ -1,10 +1,10 @@
-import { MainLayout } from '../components/layout/MainLayout';
+import MainLayout from '../components/layout/MainLayout';
 
 export function App() {
   return (
     <MainLayout>
-      <div className="bg-white shadow rounded-lg p-6">
-        <h2 className="text-2xl font-semibold mb-4">Welcome to the Voting System</h2>
+      <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-blue-500">
+        <h2 className="text-xl font-semibold mb-4 text-blue-600">Welcome to the Voting System</h2>
         <p className="text-gray-600">
           This system allows you to securely participate in voting events.
         </p>

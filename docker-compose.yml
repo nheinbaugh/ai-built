@@ -1,7 +1,5 @@
-version: '3.8'
-
 services:
-  voting-api:
+  my-voting-web:
     build:
       context: .
       dockerfile: apps/my-voting-api/Dockerfile
@@ -24,6 +22,25 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  my-voting-app:
+    build:
+      context: .
+      dockerfile: apps/my-voting-web/Dockerfile
+    ports:
+      - "4200:4200"  # Default NX serve port
+    volumes:
+      - .:/app
+      # Named volume for node_modules to prevent overwriting by bind mount
+      - my_voting_web_node_modules:/app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true  # Enable polling for Windows compatibility
+      - CHOKIDAR_USEPOLLING=true  # Enable polling for file watching
+    # Keep the container running
+    stdin_open: true
+    tty: true
+
+volumes:
+  my_voting_web_node_modules:
 
 networks:
   voting-network:

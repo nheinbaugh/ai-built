@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/vote-processing/src",
   "projectType": "library",
-  "tags": ["scope:feature layer:domain"],
+  "tags": ["scope:feature", "layer:domain"],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
@@ -13,6 +13,20 @@
         "main": "libs/vote-processing/src/index.ts",
         "tsConfig": "libs/vote-processing/tsconfig.lib.json",
         "assets": ["libs/vote-processing/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/vote-processing/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/vote-processing/jest.config.ts"
       }
     }
   }

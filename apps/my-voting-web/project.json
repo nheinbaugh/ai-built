@@ -70,5 +70,9 @@
       "dependsOn": ["build"],
       "command": "docker build -f apps/my-voting-web/Dockerfile . -t my-voting-web"
     }
-  }
+  },
+  "dependencies": {
+    "@voting/shared/components": "*"
+  },
+  "implicitDependencies": []
 }

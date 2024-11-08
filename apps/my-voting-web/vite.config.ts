@@ -46,4 +46,9 @@ export default defineConfig({
       provider: 'v8',
     },
   },
+  resolve: {
+    alias: {
+      '@voting/shared/components': resolve(__dirname, '../../libs/shared/components/src/index.ts'),
+    },
+  },
 });

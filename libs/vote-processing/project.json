@@ -1,0 +1,19 @@
+{
+  "name": "vote-processing",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/vote-processing/src",
+  "projectType": "library",
+  "tags": ["scope:feature layer:domain"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/vote-processing",
+        "main": "libs/vote-processing/src/index.ts",
+        "tsConfig": "libs/vote-processing/tsconfig.lib.json",
+        "assets": ["libs/vote-processing/*.md"]
+      }
+    }
+  }
+}

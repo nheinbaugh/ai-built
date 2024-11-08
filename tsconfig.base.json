@@ -14,6 +14,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-heinbaugh/vote-processing": ["libs/vote-processing/src/index.ts"],
       "@nx-heinbaugh/voter-management": ["libs/voter-management/src/index.ts"]
     }
   },

@@ -55,18 +55,58 @@
     * Dependencies properly configured
     * Library exports defined in index.ts
     * Unit test setup included
-- [ ] Create NX library for shared components (scope:shared, layer:presentation)
+- [x] Create NX library for shared components (scope:shared, layer:presentation)
     * Library created with appropriate tags
     * Storybook configuration included
     * Project structure follows standards
     * Dependencies properly configured
     * Library exports defined in index.ts
-- [ ] Create NX library for data models (scope:shared, layer:data)
+- [x] Create NX library for data models (scope:shared, layer:data)
     * Library created with appropriate tags
     * Project structure follows standards
     * Dependencies properly configured
     * Library exports defined in index.ts
     * Unit test setup included
+
+    
+## Data Models (scope:shared, layer:data)
+- [ ] Create Voter interface and model
+    * Interface defines all required properties
+    * Model includes validation logic
+    * Type guards implemented
+    * Unit tests cover all methods
+    * Factory methods created for testing
+- [ ] Create Candidate interface and model
+    * Interface defines all required properties
+    * Model includes validation logic
+    * Type guards implemented
+    * Unit tests cover all methods
+    * Factory methods created for testing
+- [ ] Create Vote interface and model
+    * Interface defines all required properties
+    * Model includes validation logic
+    * Type guards implemented
+    * Unit tests cover all methods
+    * Factory methods created for testing
+- [ ] Create VoteResult interface and model
+    * Interface defines all required properties
+    * Model includes validation logic
+    * Type guards implemented
+    * Unit tests cover all methods
+    * Factory methods created for testing
+- [ ] Create authentication types and interfaces
+    * All required auth types defined
+    * JWT payload interface created
+    * Role types implemented
+    * Session types defined
+    * Type guards implemented
+- [ ] Add model factories for testing
+    * Factories created for all models
+    * Random data generation implemented
+    * Custom factory methods supported
+    * Relationship handling implemented
+    * Batch creation supported
+
 
 ### Infrastructure Setup
 - [ ] Set up PostgreSQL database container in docker-compose.yml
@@ -106,44 +146,6 @@
     * Security groups defined
     * Port mappings specified
     * Internal DNS configured
-
-## Data Models (scope:shared, layer:data)
-- [ ] Create Voter interface and model
-    * Interface defines all required properties
-    * Model includes validation logic
-    * Type guards implemented
-    * Unit tests cover all methods
-    * Factory methods created for testing
-- [ ] Create Candidate interface and model
-    * Interface defines all required properties
-    * Model includes validation logic
-    * Type guards implemented
-    * Unit tests cover all methods
-    * Factory methods created for testing
-- [ ] Create Vote interface and model
-    * Interface defines all required properties
-    * Model includes validation logic
-    * Type guards implemented
-    * Unit tests cover all methods
-    * Factory methods created for testing
-- [ ] Create VoteResult interface and model
-    * Interface defines all required properties
-    * Model includes validation logic
-    * Type guards implemented
-    * Unit tests cover all methods
-    * Factory methods created for testing
-- [ ] Create authentication types and interfaces
-    * All required auth types defined
-    * JWT payload interface created
-    * Role types implemented
-    * Session types defined
-    * Type guards implemented
-- [ ] Add model factories for testing
-    * Factories created for all models
-    * Random data generation implemented
-    * Custom factory methods supported
-    * Relationship handling implemented
-    * Batch creation supported
 
 ## API Application Setup (apps/voting-api)
 - [ ] Set up Express application structure

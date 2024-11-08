@@ -1,0 +1,19 @@
+{
+  "name": "voter-management",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/voter-management/src",
+  "projectType": "library",
+  "tags": ["scope:feature layer:domain"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/voter-management",
+        "main": "libs/voter-management/src/index.ts",
+        "tsConfig": "libs/voter-management/tsconfig.lib.json",
+        "assets": ["libs/voter-management/*.md"]
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 services:
-  my-voting-web:
+  my-voting-api:
     build:
       context: .
       dockerfile: apps/my-voting-api/Dockerfile
@@ -22,7 +22,7 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-  my-voting-app:
+  my-voting-web:
     build:
       context: .
       dockerfile: apps/my-voting-web/Dockerfile
@@ -44,4 +44,6 @@ volumes:
 
 networks:
   voting-network:
-    driver: bridge 
+    driver: bridge
+  voting_network:
+    driver: bridge

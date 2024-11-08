@@ -60,5 +60,15 @@ We use the following guidance when creating new files/folders for our workspace.
     * The QA file will be used to document the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
     * The QA file will include all manual steps that can be used to validate the task has been completed successfully.
     * I write the QA file expecting that the user has no knowledge of the codebase and no access to it.
-  
+
+###  QA file Format
+  {Task Name}
+  ------------
+  ## Validation Steps
+  - [ ] {Validation Step 1}
+    * {Step 1 Description}
+    * *Expected Result*: {Expected Result}
+  - [ ] {Validation Step 2}
+    * {Step 2 Description}
+    * *Expected Result*: {Expected Result}    
 

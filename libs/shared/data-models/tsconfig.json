@@ -10,9 +10,14 @@
     "noPropertyAccessFromIndexSignature": true
   },
   "files": [],
+  "exclude": [
+    "jest.config.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**/*"
+  ],
   "include": [
-      "**/*.ts",
-    "**/*.spec.ts"
+      "**/*.ts"
   ],
   "references": [
     {

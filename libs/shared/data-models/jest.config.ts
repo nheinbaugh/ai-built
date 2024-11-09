@@ -1,5 +1,6 @@
+ 
 export default {
-  displayName: 'data-models',
+  displayName: 'shared-data-models',
   preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
@@ -7,4 +8,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../../coverage/libs/shared/data-models',
+  coveragePathIgnorePatterns: [
+    '/__tests__/' // Exclude test utilities from coverage
+  ],
 };

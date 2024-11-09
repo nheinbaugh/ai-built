@@ -1,4 +1,5 @@
-import { createInvalidVoter, createVoter } from './voter.factory';
+import { createInvalidTestVoter } from './__tests__/voter.test-factory';
+import { createVoter } from './voter.factory';
 import { validateVoter, validateVoterAge, validateVoterEmail, validateVoterId } from './voter.validation';
 
 describe('Voter Validation', () => {
@@ -54,7 +55,16 @@ describe('Voter Validation', () => {
 
   describe('Complete Voter Validation', () => {
     it('validates complete voter data', () => {
-      const voter = createVoter();
+      const firstName = 'Jane';
+      const lastName = 'Smith';
+      const email = 'jane.smith@example.com';
+      const dateOfBirth = new Date('1990-01-01');
+      const address = '123 Test St, City, ST';
+
+      const voter = createVoter(firstName, lastName, email, dateOfBirth, address);
+      voter.voterId = 'V123456'; // Add valid voter ID since factory doesn't set it
+      voter.id = 'test-id'; // Add ID since factory doesn't set it
+      
       const errors = validateVoter(voter);
       expect(errors).toHaveLength(0);
     });
@@ -67,7 +77,7 @@ describe('Voter Validation', () => {
     });
 
     it('identifies multiple validation errors', () => {
-      const invalidVoter = createInvalidVoter();
+      const invalidVoter = createInvalidTestVoter();
       const errors = validateVoter(invalidVoter);
       expect(errors.length).toBeGreaterThan(1);
       expect(errors).toContain('Invalid email format');

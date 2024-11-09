@@ -44,3 +44,7 @@ Thumbs.db
 vite.config.*.timestamp*
 
 storybook-static
+
+# Test utilities and data
+**/__tests__/*.json
+**/__tests__/*.data.*

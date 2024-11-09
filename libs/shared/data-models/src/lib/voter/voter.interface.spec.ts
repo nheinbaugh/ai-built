@@ -1,10 +1,10 @@
-import { createVoter } from './voter.factory';
+import { createTestVoter } from './__tests__/voter.test-factory';
 import { isVoter } from './voter.interface';
 
 describe('Voter Interface', () => {
   describe('Type Guard', () => {
     it('correctly identifies valid voter objects', () => {
-      const voter = createVoter();
+      const voter = createTestVoter();
       expect(isVoter(voter)).toBe(true);
     });
 
@@ -16,7 +16,7 @@ describe('Voter Interface', () => {
 
     it('rejects objects with invalid date types', () => {
       const invalidVoter = {
-        ...createVoter(),
+        ...createTestVoter(),
         dateOfBirth: '2000-01-01', // string instead of Date
         registrationDate: '2024-01-01'
       };

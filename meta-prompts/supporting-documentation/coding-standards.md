@@ -19,6 +19,7 @@
 * UI Components should contain no business logic
 * data models should contain no business logic
 * data models should live in a project with the tag `layer:data`
+* When I need to use strings that are intended for display to a user (or will be reused) I create a constant in a `*.const.ts` file.
 
 ## User QA
  - Before I attempt to write any code I will always create a QA file for the task that follows this format:
@@ -27,6 +28,10 @@
     * The QA file will be used to document the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
     * The QA file will include all manual steps that can be used to validate the task has been completed successfully.
     * I write the QA file expecting that the user has no knowledge of the codebase and no access to it.
+    * My QA file does not expect QA to be checking for the existance of files, folders, or code. It is only used to validate the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
+    * My QA file will contain:
+        * Automated QA Tests that can be run
+        * Manual Verification steps that can be taken through an API or UI
 
 # Code Organization
 We use the following guidance when creating new files/folders for our workspace.
@@ -72,4 +77,24 @@ We use the following guidance when creating new files/folders for our workspace.
   - [ ] {Validation Step 2}
     * {Step 2 Description}
     * *Expected Result*: {Expected Result}    
+
+## Model Organization
+* For data models, we use the following folder structure:
+    ```
+    model-name/
+    ├── validation/
+    │   ├── field-name.validation.ts
+    │   ├── field-name.validation.spec.ts
+    │   ├── shared.validation.ts        # For shared types and constants
+    │   └── index.ts                    # Exports and composes validators
+    ├── model-name.interface.ts
+    ├── model-name.interface.spec.ts
+    ├── model-name.factory.ts
+    └── model-name.factory.spec.ts
+    ```
+* Each field that requires validation should have its own validation file
+* Validation files should be focused on a single responsibility
+* Common validation types and utilities should be in shared.validation.ts
+* The validation/index.ts file should compose the individual validators
+* Each validation file should have its own test file
 

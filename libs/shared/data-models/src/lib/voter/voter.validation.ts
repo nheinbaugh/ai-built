@@ -1,3 +1,5 @@
+import { ValidationError, ValidationResult } from '../types/validation.types';
+import { VOTER_VALIDATION_MESSAGES } from "./validation/voter-validation-messages.const";
 import { Voter } from "./voter.interface";
 
 /**
@@ -33,33 +35,54 @@ export function validateVoterId(voterId: string): boolean {
 
 /**
  * Validates all required voter fields are present and valid
- * Returns array of validation errors, empty array if valid
+ * Returns ValidationResult with errors array using consistent messages
  */
-export function validateVoter(voter: Partial<Voter>): string[] {
-  const errors: string[] = [];
+export function validateVoter(voter: unknown): ValidationResult {
+  const errors: ValidationError[] = [];
 
-  // Required field validation
-  const required = ['id', 'firstName', 'lastName', 'email', 'dateOfBirth', 'address', 'voterId'] as const;
-  for (const field of required) {
-    if (!voter[field]) {
-      errors.push(`${field} is required`);
-    }
+  if (!voter || typeof voter !== 'object') {
+    return {
+      valid: false,
+      errors: [{ field: 'voter', message: VOTER_VALIDATION_MESSAGES.VOTER.INVALID }]
+    };
   }
 
-  // Age validation
-  if (voter.dateOfBirth && !validateVoterAge(voter.dateOfBirth)) {
-    errors.push('Voter must be at least 18 years old');
+  const voterData = voter as Partial<Voter>;
+
+  // Name validation
+  if (!voterData.firstName) {
+    errors.push({ field: 'firstName', message: VOTER_VALIDATION_MESSAGES.NAME.EMPTY });
+  }
+  if (!voterData.lastName) {
+    errors.push({ field: 'lastName', message: VOTER_VALIDATION_MESSAGES.NAME.EMPTY });
   }
 
   // Email validation
-  if (voter.email && !validateVoterEmail(voter.email)) {
-    errors.push('Invalid email format');
+  if (!voterData.email) {
+    errors.push({ field: 'email', message: VOTER_VALIDATION_MESSAGES.EMAIL.EMPTY });
+  } else if (!validateVoterEmail(voterData.email)) {
+    errors.push({ field: 'email', message: VOTER_VALIDATION_MESSAGES.EMAIL.INVALID_FORMAT });
+  }
+
+  // Date of birth validation
+  if (!voterData.dateOfBirth) {
+    errors.push({ field: 'dateOfBirth', message: VOTER_VALIDATION_MESSAGES.DATE_OF_BIRTH.INVALID });
+  } else if (!validateVoterAge(voterData.dateOfBirth)) {
+    errors.push({ field: 'dateOfBirth', message: 'Voter must be at least 18 years old' });
+  }
+
+  // Address validation
+  if (!voterData.address) {
+    errors.push({ field: 'address', message: VOTER_VALIDATION_MESSAGES.ADDRESS.REQUIRED });
   }
 
   // VoterId validation
-  if (voter.voterId && !validateVoterId(voter.voterId)) {
-    errors.push('Invalid voter ID format. Must be V followed by 6 digits');
+  if (voterData.voterId && !validateVoterId(voterData.voterId)) {
+    errors.push({ field: 'voterId', message: 'Invalid voter ID format. Must be V followed by 6 digits' });
   }
 
-  return errors;
+  return {
+    valid: errors.length === 0,
+    errors
+  };
 } 

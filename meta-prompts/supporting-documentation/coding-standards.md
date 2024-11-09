@@ -20,6 +20,14 @@
 * data models should contain no business logic
 * data models should live in a project with the tag `layer:data`
 
+## User QA
+ - Before I attempt to write any code I will always create a QA file for the task that follows this format:
+    * `documentation/qa/<indexed-number>-<task-name>.md`
+        * The indexed number starts at 00 and increments for each new task. The next number is always 01 more than the previous number.
+    * The QA file will be used to document the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
+    * The QA file will include all manual steps that can be used to validate the task has been completed successfully.
+    * I write the QA file expecting that the user has no knowledge of the codebase and no access to it.
+
 # Code Organization
 We use the following guidance when creating new files/folders for our workspace.
 
@@ -31,6 +39,7 @@ We use the following guidance when creating new files/folders for our workspace.
 
 ##  Project Structure
 * We place unit tests in files named `*.spec.ts` that are located in the same folder as the code they are testing.
+* Each Unit Test file should have a 1:1 relationship with the code file it is testing.
 * we never have folders (or files) that include the name "utils" it's far too generic to be useful
 * we prefer to have similar files (e.g. hooks, types, etc.) located in the same folder with the same generic names
     * hooks
@@ -52,14 +61,6 @@ We use the following guidance when creating new files/folders for our workspace.
     * `*.interface.ts` - for TypeScript interfaces
     * `*.function.ts` - for utility functions
     * `*.factory.ts` - for factory functions
-
-## User QA
- - I will always create a QA file for each task that follows this format:
-    * `documentation/qa/<indexed-number>-<task-name>.md`
-        * The indexed number starts at 00 and increments for each new task. The next number is always 01 more than the previous number.
-    * The QA file will be used to document the requirements, approach, implementation, testing strategy, security and performance considerations for the task.
-    * The QA file will include all manual steps that can be used to validate the task has been completed successfully.
-    * I write the QA file expecting that the user has no knowledge of the codebase and no access to it.
 
 ###  QA file Format
   {Task Name}

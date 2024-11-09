@@ -10,7 +10,10 @@
     "noPropertyAccessFromIndexSignature": true
   },
   "files": [],
-  "include": [],
+  "include": [
+      "**/*.ts",
+    "**/*.spec.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.lib.json"

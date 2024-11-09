@@ -20,6 +20,7 @@ describe('Biography Validation', () => {
       { value: null, error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.EMPTY },
       { value: undefined, error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.EMPTY },
       { value: '', error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.EMPTY },
+      { value: '  ', error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.EMPTY },
       { value: 'Too short', error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.TOO_SHORT },
       { value: 'A'.repeat(CANDIDATE_CONSTRAINTS.BIOGRAPHY_MAX_LENGTH + 1), 
         error: CANDIDATE_VALIDATION_MESSAGES.BIOGRAPHY.TOO_LONG }

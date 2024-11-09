@@ -98,3 +98,15 @@ We use the following guidance when creating new files/folders for our workspace.
 * The validation/index.ts file should compose the individual validators
 * Each validation file should have its own test file
 
+## Test Coverage Standards
+* Minimum coverage requirements:
+  - 90% statement coverage
+  - 85% branch coverage
+  - 90% function coverage
+  - 90% line coverage
+* Critical data validation code should aim for 100% coverage
+* Exceptions to coverage requirements:
+  - Index files (*.ts) that only re-export other modules
+  - Files marked with `/* istanbul ignore file */` must include a comment explaining why
+  - Any other exceptions must be documented and approved by the team
+

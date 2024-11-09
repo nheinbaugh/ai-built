@@ -20,6 +20,7 @@ describe('Name Validation', () => {
     const testCases = [
       { value: null, error: CANDIDATE_VALIDATION_MESSAGES.NAME.EMPTY },
       { value: undefined, error: CANDIDATE_VALIDATION_MESSAGES.NAME.EMPTY },
+      { value: ' ', error: CANDIDATE_VALIDATION_MESSAGES.NAME.EMPTY },
       { value: '', error: CANDIDATE_VALIDATION_MESSAGES.NAME.EMPTY },
       { value: 'A', error: CANDIDATE_VALIDATION_MESSAGES.NAME.TOO_SHORT },
       { value: 'A'.repeat(CANDIDATE_CONSTRAINTS.NAME_MAX_LENGTH + 1), 

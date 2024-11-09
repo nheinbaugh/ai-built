@@ -19,7 +19,8 @@ describe('Image URL Validation', () => {
     const testCases = [
       { value: 'not-a-url', error: CANDIDATE_VALIDATION_MESSAGES.IMAGE_URL_INVALID },
       { value: 'ftp://invalid.com', error: CANDIDATE_VALIDATION_MESSAGES.IMAGE_URL_INVALID },
-      { value: 'http:/missing-domain', error: CANDIDATE_VALIDATION_MESSAGES.IMAGE_URL_INVALID }
+      { value: 'http:/missing-domain', error: CANDIDATE_VALIDATION_MESSAGES.IMAGE_URL_INVALID },
+      { value: 3, error: CANDIDATE_VALIDATION_MESSAGES.IMAGE_URL_INVALID }
     ];
 
     testCases.forEach(({ value, error }) => {

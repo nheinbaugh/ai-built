@@ -46,20 +46,3 @@ export function createVoter(options: CreateVoterOptions): Voter {
 
   return voter;
 }
-
-/**
- * Creates an array of valid voters
- */
-export function createVoters(count: number): Voter[] {
-  return Array.from({ length: count }, (_, index) => {
-    const number = index + 1;
-    return createVoter({
-      firstName: `John${number}`,
-      lastName: `Doe${number}`,
-      email: `voter${number}@example.com`,
-      dateOfBirth: new Date('1980-01-01'),
-      address: `${number} Main St`,
-      id: `voter-${number}`
-    });
-  });
-} 

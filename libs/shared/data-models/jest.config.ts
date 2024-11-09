@@ -1,4 +1,3 @@
- 
 export default {
   displayName: 'shared-data-models',
   preset: '../../../jest.preset.js',
@@ -9,6 +8,8 @@ export default {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../../coverage/libs/shared/data-models',
   coveragePathIgnorePatterns: [
-    '/__tests__/' // Exclude test utilities from coverage
+    '/__tests__/', // Exclude test utilities from coverage
+    'node_modules',
+    'index.ts'
   ],
 };
